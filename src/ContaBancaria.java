@@ -7,15 +7,32 @@ public class ContaBancaria{
     String agencia;
     String numero;
     double saldo;
-    String nomeCliente;
+    String nomeCliente ;
+
 
     //metodos
-    void depositar(double valor){
+    String depositar(double valor){
+
+        if(valor < 0){
+            return "Valor inválido!";
+        }
         saldo = saldo + valor;
+        return "ok";
     }
 
-    void sacar(double valor){
+    String sacar(double valor){
+        if(valor < 0){
+            return "Valor inválido!";
+            //return false;
+        }
+        if(valor > saldo){
+            return "Saldo insuficiente!";
+            //System.out.println("Impossível sacar!!");
+            //return false;
+        }
+
         saldo = saldo - valor;
+        return "ok";
 
     }
 
