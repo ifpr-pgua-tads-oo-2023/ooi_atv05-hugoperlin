@@ -4,10 +4,59 @@
 public class ContaBancaria{
 
     //atributos
-    String agencia;
-    String numero;
-    double saldo;
-    String nomeCliente ;
+    private String agencia;
+    private String numero;
+    private double saldo=0;
+    private String nomeCliente ;
+
+
+    public ContaBancaria(String agencia, String numero, String nomeCliente){
+        this.agencia = agencia;
+        this.numero = numero;
+        this.nomeCliente = nomeCliente;
+    }
+
+    public ContaBancaria(String numero, String nomeCliente){
+        this.agencia = "1234";
+        this.numero = numero;
+        this.nomeCliente = nomeCliente;
+    }
+
+    public ContaBancaria(String agencia, String numero, String nomeCliente, double saldo){
+        this.agencia = agencia;
+        this.numero = numero;
+        this.nomeCliente = nomeCliente;
+        this.saldo = saldo;
+    }
+
+    public void setNumero(String numero){
+        this.numero = numero;
+    }
+
+    public String getNumero(){
+        return numero;
+    }
+
+    /*public void setAgencia(String valor){
+        agencia = valor;
+    }*/
+
+    public String getAgencia(){
+        return agencia;
+    }
+
+    /*public void setNomeCliente(String valor){
+        nomeCliente = valor;
+    }*/
+
+    public String getNomeCliente(){
+        return nomeCliente;
+    }
+
+    public double getSaldo(){
+        return saldo;
+    }
+
 
 
     //metodos

@@ -20,7 +20,7 @@ public class App {
 
 
     static void criarConta(){
-        double valor;
+        
         String nomeCliente;
         String numero;
         String agencia;
@@ -32,13 +32,10 @@ public class App {
         numero = teclado.nextLine();
         System.out.println("Digite a agência da conta:");
         agencia = teclado.nextLine();
-        System.out.println("Digite o saldo inicial R$:");
-        saldoInicial = teclado.nextDouble();
 
-        conta.nomeCliente = nomeCliente;
-        conta.numero = numero;
-        conta.agencia = agencia;
-        conta.saldo = saldoInicial;
+
+        conta = new ContaBancaria(agencia,numero,nomeCliente);
+
         System.out.println("************");
         
 
@@ -73,14 +70,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        
-        
-        int opcao;
-        
+        int opcao=0;
 
         do{
-            imprimirMenu();
+            System.out.println(imprimirMenu());
             opcao = teclado.nextInt();
+            teclado.nextLine();
 
             switch(opcao){
                 case 1:
@@ -88,6 +83,7 @@ public class App {
                 break;
                 case 2:
                     sacar();
+                    
                 break;
                 case 3:
                     depositar();
