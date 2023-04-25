@@ -7,25 +7,26 @@ public class ContaBancaria{
     private String agencia;
     private String numero;
     private double saldo=0;
-    private String nomeCliente ;
+    private Pessoa cliente;
 
 
-    public ContaBancaria(String agencia, String numero, String nomeCliente){
+
+    public ContaBancaria(String agencia, String numero, Pessoa cliente){
         this.agencia = agencia;
         this.numero = numero;
-        this.nomeCliente = nomeCliente;
+        this.cliente = cliente;
     }
 
-    public ContaBancaria(String numero, String nomeCliente){
+    public ContaBancaria(String numero, Pessoa cliente){
         this.agencia = "1234";
         this.numero = numero;
-        this.nomeCliente = nomeCliente;
+        this.cliente = cliente;
     }
 
-    public ContaBancaria(String agencia, String numero, String nomeCliente, double saldo){
+    public ContaBancaria(String agencia, String numero, Pessoa cliente, double saldo){
         this.agencia = agencia;
         this.numero = numero;
-        this.nomeCliente = nomeCliente;
+        this.cliente = cliente;
         this.saldo = saldo;
     }
 
@@ -49,8 +50,8 @@ public class ContaBancaria{
         nomeCliente = valor;
     }*/
 
-    public String getNomeCliente(){
-        return nomeCliente;
+    public Pessoa getCliente(){
+        return cliente;
     }
 
     public double getSaldo(){
@@ -91,7 +92,7 @@ public class ContaBancaria{
         texto = "Agência: " + agencia +
                 " Número: " + numero +
                 " Saldo: " + saldo +
-                " Cliente: " + nomeCliente;
+                " Cliente: " + cliente.getNome();
 
         return texto;
     }
